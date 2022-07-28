@@ -10,7 +10,7 @@ function getSpeciesByIds(...ids) {
   if (ids.length === 1) {
     return [species.find((elem) => elem.id === ids[0])];
   }
-  //const speciesReturn = species.filter((elem) => ids.includes(elem.id));
+
   return species.filter((elem) => ids.includes(elem.id));
 }
 
