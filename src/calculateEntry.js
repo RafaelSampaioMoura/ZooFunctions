@@ -20,23 +20,9 @@ function calculateEntry(entrants) {
 
   return !entrants || JSON.stringify(entrants) === '{}'
     ? 0
-    : countEntrants(entrants).child * data.prices.child +
-        countEntrants(entrants).adult * data.prices.adult +
-        countEntrants(entrants).senior * data.prices.senior;
-
-  // if (!entrants) {
-  //   return 0;
-  // }
-
-  // if (JSON.stringify(entrants) === '{}') {
-  //   return 0;
-  // }
-  //const people = countEntrants(entrants);
-  // return (
-  //   people.child * data.prices.child +
-  //   people.adult * data.prices.adult +
-  //   people.senior * data.prices.senior
-  // );
+    : countEntrants(entrants).child * data.prices.child
+        + countEntrants(entrants).adult * data.prices.adult
+        + countEntrants(entrants).senior * data.prices.senior;
 }
 
 console.log(
@@ -47,7 +33,7 @@ console.log(
     { name: 'Maria Costa', age: 18 },
     { name: 'Núbia Souza', age: 18 },
     { name: 'Carlos Nogueira', age: 50 },
-  ])
+  ]),
 );
 
 module.exports = { calculateEntry, countEntrants };
