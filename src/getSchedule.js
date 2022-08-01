@@ -11,6 +11,7 @@ const daysOfWeek = [
 ];
 
 const animals = data.species.map((e) => e.name);
+
 const getOfficeHours = (day) =>
   (day === 'Monday'
     ? 'CLOSED'
@@ -25,6 +26,7 @@ const getExhibition = (day) =>
       }
       return a;
     }, []));
+
 function getSchedule(scheduleTarget) {
   if (daysOfWeek.includes(scheduleTarget)) {
     return {
