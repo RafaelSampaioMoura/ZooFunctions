@@ -11,19 +11,9 @@ const {
   getOpeningHours,
 } = require('../src/getOpeningHours');
 
+const notNumberString = 'Abloogie-Woogie-Woo';
 describe('Testes as funções auxiliares de openingHours', () => {
-  const weekDays = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday',
-  ];
-  const dayError = 'The day must be valid. Example: Monday';
   test('isStringRepresentNumber deve retornar um error se o string não for um número', () => {
-    const notNumberString = 'Abloogie-Woogie-Woo';
     expect(() => {
       isStringRepresentNumber(notNumberString, 'minutes');
     }).toThrow();
@@ -31,7 +21,7 @@ describe('Testes as funções auxiliares de openingHours', () => {
 
   test('validateAbbreviation retorna um erro se a abreviação não for AM ou PM', () => {
     expect(() => {
-      validateAbbreviation('Abloogie-Woogie-Woo');
+      validateAbbreviation(notNumberString);
     }).toThrow();
   });
 
@@ -54,7 +44,7 @@ describe('Testes as funções auxiliares de openingHours', () => {
   });
   test('validateDay deve lançar um erro se o dia não for válido', () => {
     expect(() => {
-      validateDay('Abloogie-Woogie-Woo');
+      validateDay(notNumberString);
     }).toThrow();
   });
   test('empty returns true if empty', () => {
@@ -86,17 +76,23 @@ describe('Testes da função openingHours principal', () => {
   });
 
   test('Retorna erro se o dia ou a hora não forem válidos', () => {
-    expect(() => {getOpeningHours('Abloogie-Woogie-Woo', '10:00-AM')}).toThrow();
-    expect(() => {getOpeningHours('Tuesday', '17:00-PM')}).toThrow();
-    expect(() => {getOpeningHours('Tuesday', '10:69-PM')}).toThrow();
+    expect(() => {
+      getOpeningHours(notNumberString, '10:00-AM');
+    }).toThrow();
+    expect(() => {
+      getOpeningHours('Tuesday', '17:00-PM');
+    }).toThrow();
+    expect(() => {
+      getOpeningHours('Tuesday', '10:69-PM');
+    }).toThrow();
   });
 
-//   test('Retorna "The zoo is closed" se for uma segunda ou domingo', () => {
-//     expect(getOpeningHours('Monday', '10:00-AM')).toBe('The zoo is closed');
-//   });
+  //   test('Retorna "The zoo is closed" se for uma segunda ou domingo', () => {
+  //     expect(getOpeningHours('Monday', '10:00-AM')).toBe('The zoo is closed');
+  //   });
 
   test('Retorna a mensagem correta de acordo com o dia e o horário', () => {
     expect(getOpeningHours('Tuesday', '5:00-AM')).toBe('The zoo is closed');
     expect(getOpeningHours('Tuesday', '9:00-AM')).toBe('The zoo is open');
-  })
+  });
 });

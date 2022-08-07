@@ -76,14 +76,15 @@ describe('Testa a função handlerElephants principal', () => {
   });
 
   test('Retorna mensagem de erro quando o parâmetro não é uma string', () => {
+    const noString = 'Parâmetro inválido, é necessário uma string';
     expect(handlerElephants(1224345)).toBe(
-      'Parâmetro inválido, é necessário uma string'
+      noString,
     );
     expect(handlerElephants(['abloogie', 'woogie', 'woo'])).toBe(
-      'Parâmetro inválido, é necessário uma string'
+      noString,
     );
     expect(handlerElephants({ abloogie: 'woogie' })).toBe(
-      'Parâmetro inválido, é necessário uma string'
+      noString,
     );
   });
 
