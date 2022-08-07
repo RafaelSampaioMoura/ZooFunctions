@@ -77,7 +77,6 @@ const getSimpleNames = () =>
 
 function getAnimalMap({ includeNames = false, sorted = false, sex } = {}) {
   // seu código aqui
-
   if (!includeNames) {
     return getSimpleNames();
   }

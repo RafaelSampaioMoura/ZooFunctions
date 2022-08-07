@@ -1,6 +1,14 @@
 const { hours } = require('../data/zoo_data');
 
-const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const weekDays = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];
 const dayError = 'The day must be valid. Example: Monday';
 
 const isStringRepresentNumber = (string, what) => {
@@ -11,7 +19,7 @@ const isStringRepresentNumber = (string, what) => {
 
 const validateAbbreviation = (abbreviation) => {
   if (!['AM', 'PM'].includes(abbreviation)) {
-    throw new Error('The abbreviation must be \'AM\' or \'PM\'');
+    throw new Error("The abbreviation must be 'AM' or 'PM'");
   }
 };
 
@@ -22,12 +30,12 @@ const validateHour = (hour) => {
   isStringRepresentNumber(dataMinutes, 'minutes');
   validateAbbreviation(abbreviation);
   switch (false) {
-  case Number(dataHours) >= 0 && Number(dataHours) <= 12:
-    throw new Error('The hour must be between 0 and 12');
-  case Number(dataMinutes) >= 0 && Number(dataMinutes) <= 59:
-    throw new Error('The minutes must be between 0 and 59');
-  default:
-    return null;
+    case Number(dataHours) >= 0 && Number(dataHours) <= 12:
+      throw new Error('The hour must be between 0 and 12');
+    case Number(dataMinutes) >= 0 && Number(dataMinutes) <= 59:
+      throw new Error('The minutes must be between 0 and 59');
+    default:
+      return null;
   }
 };
 
@@ -40,9 +48,9 @@ const validateDay = (day) => {
 const empty = (one, two) => !one && !two;
 
 const fix12 = (hour, open, close) => ({
-  h: (hour === 12) ? 0 : hour,
-  o: (open === 12) ? 0 : open,
-  c: (close === 12) ? 0 : close,
+  h: hour === 12 ? 0 : hour,
+  o: open === 12 ? 0 : open,
+  c: close === 12 ? 0 : close,
 });
 
 const openOrClosed = (period, hour, open, close) => {
@@ -64,4 +72,14 @@ const getOpeningHours = (day, dataHour) => {
   return message;
 };
 
-module.exports = getOpeningHours;
+module.exports = {
+  getOpeningHours,
+  isStringRepresentNumber,
+  validateAbbreviation,
+  validateHour,
+  validateDay,
+  empty,
+  fix12,
+  openOrClosed,
+  getOpeningHours,
+};

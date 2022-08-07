@@ -1,9 +1,5 @@
 const data = require('../data/zoo_data');
 
-const doesntExist = () => {
-  throw new Error('Informações inválidas');
-};
-
 const getSpecies = (p) => data.employees
   .find(
     (e) =>
@@ -51,12 +47,7 @@ function getEmployeesCoverage({ name = 'All employees', id = 'N/A' } = {}) {
     return getObject(id);
   }
 
-  return doesntExist();
+  throw new Error('Informações inválidas');
 }
 
-// console.log(getEmployeesCoverage('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
-// console.log(getLocations('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
-// console.log(getEmployeesCoverage('Nigel'));
-// console.log(getEmployeesCoverage('Nelson'));
-// console.log(getEmployeesCoverage('ablogie-ooglie-woo'));
 module.exports = getEmployeesCoverage;

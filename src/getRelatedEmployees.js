@@ -7,27 +7,20 @@ const managersIds = [
   '0e7b460e-acf4-4e17-bcb3-ee472265db83',
 ];
 
-// console.log(data);
-// console.log(employees);
-
 function isManager(id) {
   // seu código aqui
   return managersIds.includes(id);
 }
 
-const isntManager = () => {
-  throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
-};
-
 function getRelatedEmployees(managerId) {
   // seu código aqui
-  if (isManager(managerId)) {
+  if (managersIds.includes(managerId)) {
     return employees
       .filter((e) => e.managers.includes(managerId))
       .map((e) => `${e.firstName} ${e.lastName}`);
   }
 
-  return isntManager();
+  throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
 }
 
 module.exports = { isManager, getRelatedEmployees };
