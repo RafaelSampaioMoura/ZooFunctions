@@ -6,7 +6,6 @@ const {
   validateHour,
   validateDay,
   empty,
-  fix12,
   openOrClosed,
   getOpeningHours,
 } = require('../src/getOpeningHours');
@@ -50,9 +49,9 @@ describe('Testes as funções auxiliares de openingHours', () => {
   test('empty returns true if empty', () => {
     expect(empty()).toBeTruthy();
   });
-//   test('fix12 returns all zeroes if the parameters are strictly equal to 12', () => {
-//     expect(fix12(12, 12, 12)).toEqual({ h: 0, o: 0, c: 0 });
-//   });
+  //   test('fix12 returns all zeroes if the parameters are strictly equal to 12', () => {
+  //     expect(fix12(12, 12, 12)).toEqual({ h: 0, o: 0, c: 0 });
+  //   });
   test('openOrClosed return true if the period equal AM or PM and the hour is above/equal to opening time and less than closing time', () => {
     expect(openOrClosed('AM', 8, 6, 10)).toBeTruthy();
     expect(openOrClosed('PM', 6, 8, 10)).toBeTruthy();
