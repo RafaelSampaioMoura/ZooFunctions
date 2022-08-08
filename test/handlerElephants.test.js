@@ -44,15 +44,15 @@ describe('Testes das funções auxiliares de HandlerElephants', () => {
     expect(getElephants()).toEqual(theElephants);
   });
 
-  test('"averageAge" retorna a média correta das idades dos elefantes', () => {
+  test('averageAge retorna a média correta das idades dos elefantes', () => {
     expect(averageAge({ residents: theElephants.residents })).toBe(10.5);
   });
 
-  test('"computeData" retorna a quantidade correta dos elefantes no zoológico', () => {
+  test('computeData retorna a quantidade correta dos elefantes no zoológico', () => {
     expect(computeData('count', theElephants)).toBe(4);
   });
 
-  test('"computeData" retorna um array com o nomes dos elefantes', () => {
+  test('computeData retorna um array com o nomes dos elefantes', () => {
     expect(computeData('names', theElephants)).toEqual([
       'Ilana',
       'Orval',
@@ -61,11 +61,11 @@ describe('Testes das funções auxiliares de HandlerElephants', () => {
     ]);
   });
 
-  test('"computeData" retorna a média correta das idades dos elefantes', () => {
+  test('computeData retorna a média correta das idades dos elefantes', () => {
     expect(computeData('averageAge', theElephants)).toBe(10.5);
   });
 
-  test('"computeData" retorna nulo quando não há parâmetros corretos', () => {
+  test('computeData retorna nulo quando não há parâmetros corretos', () => {
     expect(computeData('bullshit', theElephants)).toBeNull();
   });
 });
@@ -123,11 +123,11 @@ describe('Testa a função handlerElephants principal', () => {
     ]);
   });
 
-  test('"handlerElephants" retorna a quantidade correta dos elefantes no zoológico', () => {
+  test('handlerElephants retorna a quantidade correta dos elefantes no zoológico', () => {
     expect(handlerElephants('count')).toBe(4);
   });
 
-  test('"handlerElephants" retorna um array com o nomes dos elefantes', () => {
+  test('handlerElephants retorna um array com o nomes dos elefantes', () => {
     expect(handlerElephants('names')).toEqual([
       'Ilana',
       'Orval',
@@ -136,11 +136,11 @@ describe('Testa a função handlerElephants principal', () => {
     ]);
   });
 
-  test('"handlerElephants" retorna a média correta das idades dos elefantes', () => {
+  test('handlerElephants retorna a média correta das idades dos elefantes', () => {
     expect(handlerElephants('averageAge')).toBe(10.5);
   });
 
-  test('"handlerElephants" retorna nulo quando não há parâmetros corretos', () => {
+  test('handlerElephants retorna nulo quando não há parâmetros corretos', () => {
     expect(handlerElephants('bullshit')).toBeNull();
   });
 });
