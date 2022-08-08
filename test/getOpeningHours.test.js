@@ -96,4 +96,3 @@ describe('Testes da função openingHours principal', () => {
     expect(getOpeningHours('Tuesday', '9:00-AM')).toBe('The zoo is open');
   });
 });
-
