@@ -87,12 +87,13 @@ describe('Testes da função openingHours principal', () => {
     }).toThrow();
   });
 
-  //   test('Retorna "The zoo is closed" se for uma segunda ou domingo', () => {
-  //     expect(getOpeningHours('Monday', '10:00-AM')).toBe('The zoo is closed');
-  //   });
+  test('Retorna "The zoo is closed" se for uma segunda ou domingo', () => {
+    expect(getOpeningHours('Monday', '10:00-AM')).toBe('The zoo is closed');
+  });
 
   test('Retorna a mensagem correta de acordo com o dia e o horário', () => {
     expect(getOpeningHours('Tuesday', '5:00-AM')).toBe('The zoo is closed');
     expect(getOpeningHours('Tuesday', '9:00-AM')).toBe('The zoo is open');
   });
 });
+
