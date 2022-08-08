@@ -78,7 +78,6 @@ module.exports = {
   validateHour,
   validateDay,
   empty,
-  fix12,
   openOrClosed,
   getOpeningHours,
 };
