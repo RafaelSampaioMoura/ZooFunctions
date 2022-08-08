@@ -1,9 +1,7 @@
 // const { default: test } = require('test');
 // const { default: test } = require('test');
 // const { default: test } = require('test');
-const {
-  handlerElephants,
-} = require('../src/handlerElephants');
+const { handlerElephants } = require('../src/handlerElephants');
 
 // const elephantsId = 'bb2a76d8-5fe3-4d03-84b7-dba9cfc048b5';
 

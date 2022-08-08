@@ -1,8 +1,6 @@
 // const { default: test } = require('test');
 // const { describe, default: test } = require('test');
-const {
-  getOpeningHours,
-} = require('../src/getOpeningHours');
+const { getOpeningHours } = require('../src/getOpeningHours');
 
 const notNumberString = 'Abloogie-Woogie-Woo';
 // describe('Testes as funções auxiliares de openingHours', () => {
