@@ -1,5 +1,7 @@
 const { getOpeningHours } = require('../src/getOpeningHours');
 
+const notNumberString = 'Abloogie-Woogie-Woo';
+
 describe('Testes da função openingHours principal', () => {
   test('Sem parâmetros, retorna todas as horas', () => {
     expect(getOpeningHours()).toEqual({
