@@ -77,7 +77,6 @@ module.exports = {
   validateAbbreviation,
   validateHour,
   validateDay,
-  empty,
   openOrClosed,
   getOpeningHours,
 };

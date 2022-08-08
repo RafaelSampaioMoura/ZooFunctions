@@ -5,7 +5,6 @@ const {
   validateAbbreviation,
   validateHour,
   validateDay,
-  empty,
   openOrClosed,
   getOpeningHours,
 } = require('../src/getOpeningHours');
@@ -46,9 +45,9 @@ describe('Testes as funções auxiliares de openingHours', () => {
       validateDay(notNumberString);
     }).toThrow();
   });
-  test('empty returns true if empty', () => {
-    expect(empty()).toBeTruthy();
-  });
+  //   test('empty returns true if empty', () => {
+  //     expect(empty()).toBeTruthy();
+  //   });
   //   test('fix12 returns all zeroes if the parameters are strictly equal to 12', () => {
   //     expect(fix12(12, 12, 12)).toEqual({ h: 0, o: 0, c: 0 });
   //   });
