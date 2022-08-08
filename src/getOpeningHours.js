@@ -72,4 +72,4 @@ const getOpeningHours = (day, dataHour) => {
   return message;
 };
 
-module.exports = { getOpeningHours };
+module.exports = getOpeningHours;

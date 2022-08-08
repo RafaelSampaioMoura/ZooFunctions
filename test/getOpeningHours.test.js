@@ -1,4 +1,4 @@
-const { getOpeningHours } = require('../src/getOpeningHours');
+const getOpeningHours = require('../src/getOpeningHours');
 
 const notNumberString = 'Abloogie-Woogie-Woo';
 
