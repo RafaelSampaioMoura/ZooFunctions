@@ -25,6 +25,12 @@ describe('Testes da função openingHours principal', () => {
     expect(() => {
       getOpeningHours('Tuesday', '10:69-PM');
     }).toThrow();
+    expect(() => {
+      getOpeningHours('Tuesday', '10:00-DM');
+    }).toThrow();
+    expect(() => {
+      getOpeningHours('Tuesday', notNumberString);
+    }).toThrow();
   });
 
   test('Retorna "The zoo is closed" se for uma segunda ou domingo', () => {
